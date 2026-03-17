@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { fillFormRegistration, alertFeatures } from '../locators/data.locator.js';
+import { fillFormRegistrationFeatures, alertFeatures } from '../locators/data.locator.js';
 
 export class AlertPage {
   constructor(page) {
@@ -11,8 +11,8 @@ export class AlertPage {
   }
 
   async openMenuAlerts() {
-    await this.page.locator(fillFormRegistration.mainMenu).getByText('Alerts, Frame & Windows').click();
-    await this.page.locator(fillFormRegistration.menuList).getByText('Alerts').click();
+    await this.page.locator(fillFormRegistrationFeatures.mainMenu).getByText('Alerts, Frame & Windows').click();
+    await this.page.locator(fillFormRegistrationFeatures.menuList).getByText('Alerts').click();
  }
 
   async clickOkAlert() {

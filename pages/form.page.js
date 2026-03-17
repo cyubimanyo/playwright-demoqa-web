@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { fillFormRegistration } from '../locators/data.locator.js';
+import { fillFormRegistrationFeatures } from '../locators/data.locator.js';
 import { studentRegistrationForm } from '../data/testData.js';
 import path from 'path';
 
@@ -13,53 +13,53 @@ export class FormPage {
   }
 
   async openMenuRegisterForm() {
-    await this.page.locator(fillFormRegistration.mainMenu).getByText('Forms').click();
+    await this.page.locator(fillFormRegistrationFeatures.mainMenu).getByText('Forms').click();
 
-    await this.page.locator(fillFormRegistration.menuList).getByText('Practice Form').click();
+    await this.page.locator(fillFormRegistrationFeatures.menuList).getByText('Practice Form').click();
 
     await expect(this.page.getByText('Student Registration Form')).toBeVisible();
   }
 
   async fillStudentRegistrationForm() {
-    await this.page.locator(fillFormRegistration.firstNameField).fill(studentRegistrationForm.firstName);
+    await this.page.locator(fillFormRegistrationFeatures.firstNameField).fill(studentRegistrationForm.firstName);
 
-    await this.page.locator(fillFormRegistration.lastNameField).fill(studentRegistrationForm.lastName);
+    await this.page.locator(fillFormRegistrationFeatures.lastNameField).fill(studentRegistrationForm.lastName);
 
-    await this.page.locator(fillFormRegistration.emailField).fill(studentRegistrationForm.email);
+    await this.page.locator(fillFormRegistrationFeatures.emailField).fill(studentRegistrationForm.email);
 
-    await this.page.locator(fillFormRegistration.genderRadio).click();
+    await this.page.locator(fillFormRegistrationFeatures.genderRadio).click();
 
-    await this.page.locator(fillFormRegistration.mobileField).fill(studentRegistrationForm.mobile);
+    await this.page.locator(fillFormRegistrationFeatures.mobileField).fill(studentRegistrationForm.mobile);
 
-    await this.page.locator(fillFormRegistration.dateOfBirthField).fill(studentRegistrationForm.dateOfBirth);
+    await this.page.locator(fillFormRegistrationFeatures.dateOfBirthField).fill(studentRegistrationForm.dateOfBirth);
 
-    await this.page.locator(fillFormRegistration.subjectsField).fill(studentRegistrationForm.subject);
+    await this.page.locator(fillFormRegistrationFeatures.subjectsField).fill(studentRegistrationForm.subject);
 
     await this.page.locator('.subjects-auto-complete__option').getByText(studentRegistrationForm.subject).click();
 
     await this.page.waitForTimeout(5000);
 
-    await this.page.locator(fillFormRegistration.hobbyField).click();
+    await this.page.locator(fillFormRegistrationFeatures.hobbyField).click();
 
     const filePath = path.resolve('data/sampleFile.jpeg');
 
-    await this.page.locator(fillFormRegistration.pictureField).setInputFiles(filePath);
+    await this.page.locator(fillFormRegistrationFeatures.pictureField).setInputFiles(filePath);
 
-    await this.page.locator(fillFormRegistration.currentAddressField).fill(studentRegistrationForm.currentAddress);
+    await this.page.locator(fillFormRegistrationFeatures.currentAddressField).fill(studentRegistrationForm.currentAddress);
 
-    await this.page.locator(fillFormRegistration.selectStateField).click();
-    await this.page.locator(fillFormRegistration.selectStateField).fill(studentRegistrationForm.state);
+    await this.page.locator(fillFormRegistrationFeatures.selectStateField).click();
+    await this.page.locator(fillFormRegistrationFeatures.selectStateField).fill(studentRegistrationForm.state);
 
     await this.page.getByRole('option', { name: studentRegistrationForm.state }).click();
 
-    await this.page.locator(fillFormRegistration.selectCityField).click();
-    await this.page.locator(fillFormRegistration.selectCityField).fill(studentRegistrationForm.city);
+    await this.page.locator(fillFormRegistrationFeatures.selectCityField).click();
+    await this.page.locator(fillFormRegistrationFeatures.selectCityField).fill(studentRegistrationForm.city);
 
     await this.page.getByRole('option', { name: studentRegistrationForm.city }).click();
   }
 
   async clickSubmitButton() {
-    await this.page.locator(fillFormRegistration.submitButton).click();
+    await this.page.locator(fillFormRegistrationFeatures.submitButton).click();
     await expect(this.page.getByText('Thanks for submitting the form')).toBeVisible();
   }
 

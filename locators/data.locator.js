@@ -1,4 +1,4 @@
-export const fillFormRegistration = {
+export const fillFormRegistrationFeatures = {
     mainMenu: '.card-body h5',
     menuList: '.menu-list',
     firstNameField: '#firstName',
@@ -22,4 +22,8 @@ export const alertFeatures = {
     timerAlertButtonField: '#timerAlertButton',
     confirmButtonField: '#confirmButton',
     promtButtonField: '#promtButton'
+};
+
+export const listFeatures = {
+  listSelection: '#verticalListContainer .list-group-item'
 };
