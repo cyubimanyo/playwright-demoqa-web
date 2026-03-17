@@ -104,23 +104,6 @@ This project follows the **Page Object Model (POM)** design pattern:
 
 ---
 
-## 📸 Test Artifacts
-
-Playwright automatically generates:
-
-* 📷 Screenshots (on failure)
-* 🎥 Videos (on failure)
-* 📊 HTML Reports
-
-Generated folders:
-
-```
-test-results/
-playwright-report/
-```
-
----
-
 ## 🧹 Best Practices Implemented
 
 * ✅ Separation of concerns (POM)
@@ -134,4 +117,4 @@ playwright-report/
 
 ## 👨‍💻 Author
 
-Automation Engineer - Playwright Framework
+Andhiny Fatikha Rizki - QA Automation / SDET
